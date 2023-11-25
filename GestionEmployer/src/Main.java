@@ -1,11 +1,15 @@
+import prosit10.Departement;
+import prosit10.DepartementHashSet;
 import prosit9.Employer;
 import prosit9.SocieteArrayList;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("--------------------Prosit 9--------------------");
         SocieteArrayList company = new SocieteArrayList();
 
         // Adding employees
@@ -36,6 +40,37 @@ public class Main {
         System.out.println("\nEmployees after sorting by name, department, and grade:");
         company.displayEmploye();
 
+        System.out.println("--------------------Prosit 10--------------------");
+        DepartementHashSet departmentSet = new DepartementHashSet();
+
+        // Adding departments
+        Departement dep1 = new Departement(101, "HR", 20);
+        Departement dep2 = new Departement(102, "IT", 50);
+        Departement dep3 = new Departement(103, "Finance", 30);
+
+        // Adding departments to the set
+        departmentSet.ajouterDepartement(dep1);
+        departmentSet.ajouterDepartement(dep2);
+        departmentSet.ajouterDepartement(dep3);
+
+        // Displaying departments
+        System.out.println("\nDepartments in the company:");
+        departmentSet.displayDepartement();
+
+        // Searching for a department by name
+        String departmentNameToSearch = "IT";
+        boolean foundDepartment = departmentSet.rechercherDepartement(departmentNameToSearch);
+        System.out.println("\nIs the department '" + departmentNameToSearch + "' found? " + foundDepartment);
+
+        // Sorting departments by ID
+        TreeSet<Departement> sortedDepartments = departmentSet.trierDepartementById();
+
+        // Displaying sorted departments
+        System.out.println("\nDepartments after sorting by ID:");
+        for (Departement dep : sortedDepartments) {
+            System.out.println(dep);
+        }
+
         // Creating a HashMap
         Map<String, Integer> studentScores = new HashMap<>();
         studentScores.put("Alice", 12);
@@ -46,4 +81,5 @@ public class Main {
 
         System.out.println(studentScores);
     }
+
 }
