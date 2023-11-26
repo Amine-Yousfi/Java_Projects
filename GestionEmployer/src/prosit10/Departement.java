@@ -49,7 +49,7 @@ public class Departement implements Comparable<Departement> {
 
     @Override
     public String toString() {
-        return "id :"+ id + "Nom prosit10.Departement: "+ nomD+ "Nombre prosit9.Employer: "+ nbrEmploye;
+        return " Departement{id="+ id + ", Nom de Departement=" + nomD+ ", nbrEmployer="+ nbrEmploye+"}";
     }
 
     @Override

@@ -1,10 +1,12 @@
 import prosit10.Departement;
 import prosit10.DepartementHashSet;
+import prosit11.AffectationHashMap;
 import prosit9.Employer;
 import prosit9.SocieteArrayList;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Main {
@@ -80,6 +82,43 @@ public class Main {
         studentScores.put("David", 20);
 
         System.out.println(studentScores);
+
+        System.out.println("--------------------Prosit 11--------------------");
+        AffectationHashMap affectationHashMap = new AffectationHashMap();
+
+        Employer employer1 = new Employer(5, "Amine", "Yousfi", "Manager", 19);
+        Employer employer2 = new Employer(4, "Leo", "Messi", "Player", 18);
+        Employer employer3 = new Employer(6, "Cristiano", "Ronaldo", "Player", 17);
+
+        Departement dept1 = new Departement(104, "Business", 25);
+        Departement dept2 = new Departement(105, "Sport", 10);
+
+        affectationHashMap.ajouterEmployeDepartement(employer1, dept1);
+        affectationHashMap.ajouterEmployeDepartement(employer1, dept2);
+        affectationHashMap.ajouterEmployeDepartement(employer2, dept2);
+        affectationHashMap.ajouterEmployeDepartement(employer3, dept2);
+
+        affectationHashMap.afficherEmployesEtDepartements();
+        System.out.println("avant la suppression");
+        System.out.println(dep2);
+        affectationHashMap.supprimerEmployeEtDepartement(employer3, dept2);
+        System.out.println("aprés la suppression");
+        System.out.println(dep2);
+
+        System.out.println(affectationHashMap.rechecheDepartement(dept1));
+        System.out.println(affectationHashMap.rechecheEmploye(emp3));
+
+        affectationHashMap.afficherEmployes();
+        affectationHashMap.afficherDepartements();
+        System.out.println(" ");
+        System.out.println("affichage avant le tri des employees");
+        affectationHashMap.afficherEmployesEtDepartements();
+        System.out.println(" ");
+        System.out.println("affichage aprés le tri des employees");
+        TreeMap<Employer, Departement> sortedMap = affectationHashMap.trierMap();
+        for (Map.Entry<Employer, Departement> entry : sortedMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
     }
 
 }

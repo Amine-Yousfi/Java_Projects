@@ -59,7 +59,7 @@ public class Employer implements Comparable<Employer> {
 
     @Override
     public String toString() {
-        return "prosit9.Employer{" +
+        return "Employer{" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
