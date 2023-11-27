@@ -105,15 +105,16 @@ public class Main {
         System.out.println("aprés la suppression");
         System.out.println(dep2);
 
-        System.out.println(affectationHashMap.rechecheDepartement(dept1));
-        System.out.println(affectationHashMap.rechecheEmploye(emp3));
-
+        System.out.println("la recherche d'un departement : "+affectationHashMap.rechecheDepartement(dept1));
+        System.out.println("la recherche d'un employer : "+affectationHashMap.rechecheEmploye(emp3));
+        System.out.println("=======================================");
         affectationHashMap.afficherEmployes();
+        System.out.println("=======================================");
         affectationHashMap.afficherDepartements();
-        System.out.println(" ");
+        System.out.println("=======================================");
         System.out.println("affichage avant le tri des employees");
         affectationHashMap.afficherEmployesEtDepartements();
-        System.out.println(" ");
+        System.out.println("=======================================");
         System.out.println("affichage aprés le tri des employees");
         TreeMap<Employer, Departement> sortedMap = affectationHashMap.trierMap();
         for (Map.Entry<Employer, Departement> entry : sortedMap.entrySet()) {
