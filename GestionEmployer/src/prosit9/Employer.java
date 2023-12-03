@@ -78,6 +78,9 @@ public class Employer implements Comparable<Employer> {
         return false;
     }
 
+    /*compareTo(Employer o): Implements the compareTo method
+    from the Comparable interface, comparing Employer objects based on their IDs.
+     */
     @Override
     public int compareTo(Employer o) {
         return this.id - o.getId();

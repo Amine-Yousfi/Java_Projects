@@ -58,15 +58,15 @@ public class AffectationHashMap {
         return employeDep.containsValue(d);
     }
     public TreeMap<Employer, Departement> trierMap(){
-       /* Comparator<Employe> c = new Comparator<Employe>() {
+        Comparator<Employer> c = new Comparator<Employer>() {
             @Override
-            public int compare(Employe o1, Employe o2) {
-                return o1.getID()- o2.getID();
+            public int compare(Employer o1, Employer o2) {
+                return o1.getId()- o2.getId();
             }
         };
-        TreeMap<Employe, Departement> tree = new TreeMap<>(c);
+        TreeMap<Employer, Departement> tree = new TreeMap<>(c);
         tree.putAll(employeDep);
-        return tree;*/
-        return new TreeMap<>(employeDep);
+        return tree;
+        //return new TreeMap<>(employeDep);
     }
 }
