@@ -82,7 +82,7 @@ public class Main {
         studentScores.put("David", 20);
 
         System.out.println(studentScores);
-
+        System.out.println(" ");
         System.out.println("--------------------Prosit 11--------------------");
         AffectationHashMap affectationHashMap = new AffectationHashMap();
 
@@ -105,8 +105,8 @@ public class Main {
         System.out.println("aprés la suppression");
         System.out.println(dep2);
 
-        System.out.println("la recherche d'un departement : "+affectationHashMap.rechecheDepartement(dept1));
-        System.out.println("la recherche d'un employer : "+affectationHashMap.rechecheEmploye(emp3));
+        System.out.println("la recherche d'un departement : "+affectationHashMap.rechercherDepartement(dept1));
+        System.out.println("la recherche d'un employer : "+affectationHashMap.rechercherEmploye(emp3));
         System.out.println("=======================================");
         affectationHashMap.afficherEmployes();
         System.out.println("=======================================");
